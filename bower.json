@@ -1,0 +1,24 @@
+{
+  "name": "angular-graylog2",
+  "description": "Service to send log messages to a graylog server over http",
+  "main": "lib/angular-graylog2.js",
+  "authors": [
+    "Fernando González <fgo@outlook.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "service",
+    "graylog2"
+  ],
+  "homepage": "https://github.com/frnd/angular-graylog2",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
