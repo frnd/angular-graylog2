@@ -10,7 +10,7 @@ describe('angular-gaylog2', function() {
     // Set up the mock http service responses
     $httpBackend = $injector.get('$httpBackend');
     // backend definition common for all tests
-    requestHandler = $httpBackend.when('PUT', 'http://localhost:12202/gelf').respond({});
+    requestHandler = $httpBackend.when('PUT', 'http://localhost:12201/gelf').respond({});
     Graylog2LEVELS = $injector.get('Graylog2LEVELS');
     Graylog2 = $injector.get('Graylog2');
   }));
@@ -45,7 +45,7 @@ describe('angular-gaylog2', function() {
         assert.ok(Graylog2.fatal, "Method to log not available not available");
       });
       it('should send a request to server on log',  function() {
-        $httpBackend.expectPUT('http://localhost:12202/gelf');
+        $httpBackend.expectPOST('http://localhost:12202/gelf');
         Graylog2.log(Graylog2LEVELS.INFO, "TEST", {
           property: "TEST_DATA"
         });
@@ -58,7 +58,7 @@ describe('angular-gaylog2', function() {
         assert.ok(Graylog2.profile, "Method to profile not available not available");
       });
       it('should have a send profiling time as info', function(){
-        $httpBackend.expectPUT('http://localhost:12202/gelf');
+        $httpBackend.expectPUT('http://localhost:12201/gelf');
         Graylog2.profile('test');
         Graylog2.profile('test');
         $httpBackend.flush();
